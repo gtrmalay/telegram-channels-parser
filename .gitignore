@@ -1,0 +1,22 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Сборка проекта
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*/bin/
+*/obj/
+
+## Ресайплер
+*.aps
+*.cache
+
+## Файлы IDE
+*.swp
+*.swo
