@@ -19,7 +19,7 @@ C# приложение для мониторинга Telegram-каналов и
 1. Клонируйте репозиторий:
 ```bash
 git clone https://github.com/yourname/telegram-parser.git
-cd telegram-parser
+cd telegram-channels-parser
 ```
 
 2. Настройте базу данны:
