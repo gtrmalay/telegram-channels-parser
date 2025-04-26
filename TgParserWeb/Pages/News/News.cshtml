@@ -1,0 +1,124 @@
+﻿@page
+@model NewsModel
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Отфильтрованные новости</h1>
+        <a href="/" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> На главную
+        </a>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <label for="sourceFilter" class="form-label">Канал:</label>
+                    <select class="form-select" id="sourceFilter" name="source">
+                        <option value="">Все каналы</option>
+                        @foreach (var source in Model.UniqueSources)
+                        {
+                            <option value="@source" selected="@(source == Model.CurrentFilter?.Source)">@source</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="dateFrom" class="form-label">С:</label>
+                    <input type="date" class="form-control" id="dateFrom" name="dateFrom"
+                           value="@Model.CurrentFilter?.DateFrom?.ToString("yyyy-MM-dd")">
+                </div>
+                <div class="col-md-4">
+                    <label for="dateTo" class="form-label">По:</label>
+                    <input type="date" class="form-control" id="dateTo" name="dateTo"
+                           value="@Model.CurrentFilter?.DateTo?.ToString("yyyy-MM-dd")">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Применить</button>
+                    <a href="/" class="btn btn-outline-secondary">Сбросить</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="messages-container card">
+        <div class="card-body p-0">
+            @if (Model.Messages.Any())
+            {
+                @foreach (var message in Model.Messages)
+                {
+                    <div class="message-card p-3 border-bottom">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="mb-0 text-primary">@message.Source</h5>
+                            <small class="text-muted">@message.CreatedAt.ToLocalTime().ToString("g")</small>
+                        </div>
+                        <p class="mb-2">@message.Text</p>
+                        @if (!string.IsNullOrEmpty(message.Link))
+                        {
+                            <a href="@message.Link" target="_blank" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-telegram"></i> Открыть
+                            </a>
+                        }
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="p-3 text-center text-muted">
+                    Сообщений не найдено
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <button id="scrollTopBtn" class="btn btn-primary rounded-circle shadow position-fixed" style="bottom: 20px; right: 20px; display: none; width: 48px; height: 48px; z-index: 1050;">
+        <i class="bi bi-arrow-up-short" style="font-size: 24px;"></i>
+    </button>
+
+    @if (Model.TotalPages > 1)
+    {
+        <nav aria-label="Навигация" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(1)" aria-label="Первая">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(Model.CurrentPage - 1)" aria-label="Предыдущая">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+                @for (int i = Model.StartPage; i <= Model.EndPage; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Model.GetPageLink(i)">@i</a>
+                    </li>
+                }
+
+                <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(Model.CurrentPage + 1)" aria-label="Следующая">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(Model.TotalPages)" aria-label="Последняя">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    }
+</div>
+
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/news-page.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="~/js/news-page.js" asp-append-version="true"></script>
+    <script src="~/js/low-button-script.js" asp-append-version="true"></script>
+}

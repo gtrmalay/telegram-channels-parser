@@ -1,0 +1,174 @@
+﻿.messages-container {
+    max-height: 60vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    background-color: #f6f7f8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 10px;
+}
+
+.message-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 15px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+    .message-card:hover {
+        background-color: #f0f3f5;
+        transform: translateY(-4px);
+    }
+
+    .message-card .d-flex {
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .message-card h5 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #0088cc;
+    }
+
+    .message-card small {
+        font-size: 0.875rem;
+        color: #6c757d;
+    }
+
+    .message-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #495057;
+        margin-top: 8px;
+    }
+
+    .message-card a {
+        font-size: 0.875rem;
+        color: #0088cc;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+
+        .message-card a:hover {
+            text-decoration: underline;
+        }
+
+.pagination .page-item.active .page-link {
+    background-color: #0088cc;
+    border-color: #0088cc;
+    color: white;
+    font-weight: 600;
+}
+
+.pagination .page-item .page-link {
+    color: #0088cc;
+    border: 1px solid #e1e5e8;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+    .pagination .page-item .page-link:hover {
+        background-color: #f1f3f5;
+        border-color: #e1e5e8;
+    }
+
+.pagination .page-item.disabled .page-link {
+    color: #ccc;
+    background-color: #f9f9f9;
+    border-color: #e1e5e8;
+}
+
+.link-button {
+    display: inline-block;
+    color: #0088cc;
+    border: 1px solid #e1e5e8;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: white;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+    .link-button:hover {
+        background-color: #f1f3f5;
+        border-color: #e1e5e8;
+        text-decoration: none;
+        color: #0088cc;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    background-color: transparent;
+}
+
+    .table thead th {
+        border-bottom: 2px solid #e1e5e8;
+        background-color: #f9f9f9;
+        font-weight: 600;
+        color: #495057;
+        font-size: 0.95rem;
+        padding: 12px 15px;
+        text-align: left;
+    }
+
+    .table tbody tr {
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .table tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+    .table tbody td {
+        padding: 15px;
+        border: none;
+        vertical-align: middle;
+        font-size: 0.9rem;
+        color: #495057;
+    }
+
+/* Для адаптивности */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+        .table tr {
+            margin-bottom: 15px;
+        }
+
+        .table td {
+            text-align: right;
+            padding-left: 50%;
+            position: relative;
+        }
+
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: 45%;
+                padding-left: 10px;
+                font-weight: 600;
+                color: #6c757d;
+                text-align: left;
+            }
+}

@@ -1,0 +1,60 @@
+﻿/* telegram-theme.css */
+
+:root {
+    --tg-blue: #229ED9;
+    --tg-blue-dark: #1d8ac2;
+    --tg-background: #f5f8fb;
+    --tg-border: #d1dbe5;
+    --tg-text: #202c33;
+}
+body {
+    background-color: var(--tg-background);
+    background-image: url('/Resources/background-theme.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: var(--tg-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--tg-border);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--tg-blue);
+}
+
+.navbar-brand:hover {
+    color: var(--tg-blue-dark);
+}
+
+.nav-link {
+    color: var(--tg-text);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--tg-blue);
+}
+
+.navbar-toggler {
+    border-color: var(--tg-border);
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+}
+
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid var(--tg-border);
+    padding: 1rem;
+    margin-top: 2rem;
+}

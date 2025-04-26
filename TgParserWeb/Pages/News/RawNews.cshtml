@@ -1,0 +1,80 @@
+﻿@page
+@model RawsNewsModel
+
+<div class="container mt-4">
+    <h1>Сырые новости</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Источник</th>
+                <th>Заголовок</th>
+                <th>Текст</th>
+                <th>Дата</th>
+                <th>Автор</th>
+                <th>Ссылка</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var news in Model.RawNewsItems)
+            {
+                <tr>
+                    <td data-label="Источник">@news.Source</td>
+                    <td data-label="Заголовок">@news.Title</td>
+                    <td data-label="Текст">@news.Text</td>
+                    <td data-label="Дата">@news.CreatedAt.ToString("g")</td>
+                    <td data-label="Автор">@news.Author</td>
+                    <td data-label="Ссылка">
+                        <a class="link-button" href="@news.Link" target="_blank">Перейти</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @if (Model.TotalPages > 1)
+    {
+        <nav aria-label="Навигация" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(1)" aria-label="Первая">
+                        <span aria-hidden="true">&laquo;&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(Model.CurrentPage - 1)" aria-label="Предыдущая">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+                @for (int i = Model.StartPage; i <= Model.EndPage; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        <a class="page-link" href="@Model.GetPageLink(i)">@i</a>
+                    </li>
+                }
+
+                <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(Model.CurrentPage + 1)" aria-label="Следующая">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Model.GetPageLink(Model.TotalPages)" aria-label="Последняя">
+                        <span aria-hidden="true">&raquo;&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    }
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/news-page.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <script src="~/js/news-page.js" asp-append-version="true"></script>
+    <script src="~/js/low-button-script.js" asp-append-version="true"></script>
+}
