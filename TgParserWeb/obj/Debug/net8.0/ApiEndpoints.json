@@ -2,7 +2,7 @@
   {
     "ContainingType": "ParserController",
     "Method": "StartImport",
-    "RelativePath": "api/parser/import-news",
+    "RelativePath": "api/import-news",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -12,7 +12,7 @@
   {
     "ContainingType": "ParserController",
     "Method": "GetNews",
-    "RelativePath": "api/parser/news",
+    "RelativePath": "api/news",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -4,23 +4,27 @@ using TgParser.Data;
 using TgParser.Services;
 using System.Diagnostics;
 
-[Route("api/parser")]
+[Route("api")]
 [ApiController]
 public class ParserController : ControllerBase
 {
     private readonly AppDbContext _db;
     private readonly TelegramService _telegramService;
     private readonly ILogger<ParserController> _logger;
+    private readonly IConfiguration _configuration;
 
     public ParserController(
         AppDbContext db,
         TelegramService telegramService,
-        ILogger<ParserController> logger)
+        ILogger<ParserController> logger,
+        IConfiguration configuration)
     {
         _db = db;
         _telegramService = telegramService;
         _logger = logger;
+        _configuration = configuration;
     }
+
 
     [HttpPost("import-news")]
     [ValidateAntiForgeryToken]
@@ -48,7 +52,7 @@ public class ParserController : ControllerBase
         }
     }
 
-    
+
     [HttpGet("news")]
     public async Task<IActionResult> GetNews([FromQuery] int page = 1, [FromQuery] int pageSize = 20)
     {

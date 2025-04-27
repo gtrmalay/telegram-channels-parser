@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Главная";
 }
@@ -7,7 +8,6 @@
 <form method="post">
     @Html.AntiForgeryToken()
 </form>
-
 
 <div class="container mt-4">
     <div class="row mb-4">
@@ -44,21 +44,13 @@
         <a href="/Settings/Settings" class="btn btn-outline-primary">
             <i class="bi bi-gear"></i> Настройки
         </a>
-        <!--a href="/News/News" class="btn btn-primary me-2">
-            <i class="bi bi-filter"></i> Отфильтрованные новости
-        </!--a>
-        <!--a href="/News/RawNews" class="btn btn-secondary me-2">
-            <i class="bi bi-code-square"></i> Сырые новости
-        </!--a>
-       
     </div>
 </div>
 
+@section Scripts {
+    <script src="~/js/index-page.js" asp-append-version="true"></script>
+}
 
 @section Styles {
     <link rel="stylesheet" href="~/css/index-page.css" asp-append-version="true" />
-}
-
-@section Scripts {
-    <script src="~/js/index-page.js" asp-append-version="true"></script>
 }

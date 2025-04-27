@@ -12,7 +12,7 @@ namespace TgParserWeb.Services
     {
         private readonly IServiceProvider _services;
         private readonly ILogger<TelegramParserHostedService> _logger;
-        private Timer? _timer; // Nullable timer
+        private Timer? _timer;
 
         public TelegramParserHostedService(
             IServiceProvider services,

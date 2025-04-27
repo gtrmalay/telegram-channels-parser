@@ -110,3 +110,17 @@ C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\n
 C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\obj\Debug\net8.0\TgParserWeb.sourcelink.json
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\EX\Desktop\Mydir\Runpay\Projects\TelegramParser\TgParserWeb\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

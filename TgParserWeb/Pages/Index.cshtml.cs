@@ -18,7 +18,17 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        
+        DateTime someDate = DateTime.UtcNow;
+        var result = await _db.RawNews
+            .Where(news => news.CreatedAt.Date == someDate.Date)
+            .CountAsync();
+        TodayCount = result;
+            
+
+        DuplicatesCount = await _db.RawNews
+            .GroupBy(news => new { news.Title, news.Text }) 
+            .Where(group => group.Count() > 1) 
+            .CountAsync(); 
 
     }
 }
